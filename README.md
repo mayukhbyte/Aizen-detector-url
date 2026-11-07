@@ -1,296 +1,157 @@
 <div align="center">
 
-# Aizen Detector
+<img src="web/website/static/aizen-detector-normal.png" alt="Aizen Detector Logo" width="120" height="120" />
+
+# aizen.detector
 
 **sketchy link? just aizen detect it**
 
-**Website: [url.vet](https://url.vet)**
+**Live Website: [https://aizen-detector.vercel.app](https://aizen-detector.vercel.app)** · **Live API: [https://aizen-detector-api.vercel.app](https://aizen-detector-api.vercel.app)**
 
+Real-time phishing detection and URL safety analysis engine. Paste any link to instantly receive a comprehensive trust score, fully explainable verdict, and deep security report. Built with explainable heuristics, complete transparency, and zero black-box obscurity.
 
-Open-source phishing detection engine for URLs and domains — paste any link and get a trust score, a fully explainable verdict, and a shareable security report with live page preview, all in real time. No black-box ML result. Every signal explained.
+**21 concurrent analyzers · 39 security signals · DNS · TLS · RDAP/WHOIS · typosquatting · redirect chains · short-link resolution · content analysis · threat intel · REST API · Chrome extension**
 
-**21 concurrent analyzers · 39 signals · DNS · TLS · domain info · typosquatting · redirect chains · short-link following · content analysis · threat feeds · REST API · Chrome extension · Docker · self-hostable**
+[![Go](https://img.shields.io/badge/Go-1.23+-00ADD8?logo=go&logoColor=white)](https://go.dev)
+[![SvelteKit](https://img.shields.io/badge/SvelteKit-5-orange?logo=svelte)](https://svelte.dev)
+[![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?logo=vercel)](https://aizen-detector.vercel.app)
+[![Author](https://img.shields.io/badge/Author-mayukh-blue)](https://github.com/mayukhbyte)
 
-> Open-source self-hostable alternative to VirusTotal, CheckPhish, and URLScan.io
+[⚡ Live Demo](https://aizen-detector.vercel.app) · [⚙️ Detection Engine](#detection-engine) · [🏛 Architecture](#architecture) · [🚀 API Reference](#api-example)
 
-
-[![Go](https://img.shields.io/badge/Go-1.24+-00ADD8?logo=go&logoColor=white)](https://go.dev)
-[![Svelte](https://img.shields.io/badge/Svelte-5-orange?logo=svelte)](https://svelte.dev)
-[![License](https://img.shields.io/badge/License-AGPL--3-blue.svg)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/urlvet/urlvet?style=social)](https://github.com/urlvet/urlvet)
-[![Last Commit](https://img.shields.io/github/last-commit/urlvet/urlvet)](https://github.com/urlvet/urlvet/commits/main)
-
-[English](./README.md) | [中文](./README.zh.md)
-
-[⚡ Quick Start](#quick-start) · [⚙️ Detection Engine](#detection-engine) · [🏛 Architecture](#architecture) · [📚 Docs](#documentation) · [🤝 Contributing](#contributing)
-
-<sub>Aizen Detector · Formerly known as SafeSurf · Also known as URLvet</sub>
+<sub>Created & maintained by Mayukh (@mayukhbyte)</sub>
 
 </div>
 
 ---
 
-## Phishing Detection Demo
+## 🎯 At a Glance
 
- > Paste a URL → get a **trust score, verdict, and detailed report** in real time.
+- **Instant Live Crawl**: Real-time evaluation of arbitrary URLs, including deep redirection hop resolution.
+- **Explainable Scoring**: Every verdict breaks down into discrete good, bad, and neutral signals.
+- **Privacy-First**: No tracking, no stored browsing history, no third-party cookies.
+- **Microservice & Serverless Ready**: Full support for Vercel Serverless (Go runtime) and SvelteKit frontend.
+- **Friday the Assistant**: Interactive in-app guide assisting users with security insights and warnings.
 
-![Phishing Detection Demo](assets/demo.gif)
+---
 
-Try it at [url.vet](https://url.vet), free and with no signup.
+## 🚀 Live Deployments
 
+- **Frontend Application**: [https://aizen-detector.vercel.app](https://aizen-detector.vercel.app)
+- **Backend API**: [https://aizen-detector-api.vercel.app](https://aizen-detector-api.vercel.app)
+- **API Health Check**: [https://aizen-detector-api.vercel.app/health](https://aizen-detector-api.vercel.app/health)
+- **Interactive Documentation**: [https://aizen-detector-api.vercel.app/swagger/index.html](https://aizen-detector-api.vercel.app/swagger/index.html)
 
-## Quick Start
+---
 
+## 💻 Quick Start (Local Development)
+
+### 1. Clone the repository
 ```bash
-git clone https://github.com/urlvet/urlvet.git
-cd urlvet
-make start
+git clone https://github.com/mayukhbyte/aizen-detector.git
+cd aizen-detector
 ```
 
-Open Web UI: **[localhost:3000](http://localhost:3000)** 
+### 2. Run the Backend (Go)
+```bash
+cd server
+go run ./cmd/aizen-detector
+```
+*Backend runs on `http://localhost:8080`*
 
-Detailed setup guide: [docs/setup.md](docs/setup.md) 
+### 3. Run the Frontend (SvelteKit)
+```bash
+cd ../web/website
+npm install
+npm run dev
+```
+*Frontend runs on `http://localhost:5173`*
 
+---
 
+## 📎 Meet Friday
 
-## At a Glance
+**Friday** is the AI paperclip assistant residing in the corner of `aizen.detector`. Friday guides users through unfamiliar technical reports, flags critical vulnerabilities, and explains risk scores in plain language.
 
-- Live scan, instant results
-- 21 analyzers, 39 signals, fully explainable
-- HTTP API + Web UI + Chrome extension
-- Explainable scoring (no black-box ML)
-- Simple Docker setup
+---
 
+## 🔌 API Example
 
-## How It Compares
-
-| Feature | url.vet | VirusTotal | Google Safe Browsing | URLScan.io | CheckPhish |
-|---------|----------|------------|----------------------|------------|------------|
-| Live crawl, instant results | ✅ | Partial | ❌ | Partial | Partial |
-| Explains every verdict | ✅ | Partial | ❌ | Partial | Partial |
-| Beginner-friendly interface | ✅ | Partial | Partial | Partial | Partial |
-| Credential form detection | ✅ | ❌ | ❌ | Partial | ✅ |
-| Follows redirect chains | ✅ | ✅ | ❌ | ✅ | ✅ |
-| Detailed technical insights | ✅ | ❌ | ❌ | ✅ | Partial |
-| Live page preview | ✅ | ❌ | ❌ | ✅ | ✅ |
-| Detection using AI/ML | ❌ | ✅ | ✅ | Partial | ✅ |
-| Known phishing database coverage | ✅¹ | ✅ | ✅ | Partial | Partial |
-| Scan multiple URLs at once | ❌ | ✅ | ✅ | ✅ | ✅ |
-| Browser protection | ✅ | ✅ | ✅ | ✅ | ❌ |
-| Open source | ✅ | ❌ | ❌ | ❌ | ❌ |
-
-¹ Checks PhishTank, URLhaus and Google Safe Browsing. On a self-hosted copy, URLhaus and Safe Browsing need free API keys.
-
-Fast scanners (like Google Safe Browsing) give you a verdict from database lookup with no explanation or live scanning. Deep crawlers (like URLScan.io) take too long. url.vet bridges the gap by doing live analysis with per-signal explanations in real time — and it's open-source.
-
-
-
-## Who This Is For
-
-- End users checking suspicious links
-- Privacy-conscious people: no accounts, cookies or trackers, and no IPs or scanned links in logs. The sites you check see our server, never you
-- Developers integrating URL analysis
-- Security teams building detection pipelines
-- Researchers
-
-
-
-## Vetty
-
-Vetty is the paperclip in the corner of the website. He helps people use url.vet. He is inspired by Clippy, the paperclip helper from old office software. 
-
-## API Example
-
-Analyze a URL via HTTP:
+Analyze any URL via standard HTTP GET:
 
 ```bash
-curl "http://localhost:8080/api/v1/analyze?url=https://example.com"
+curl "https://aizen-detector-api.vercel.app/api/v1/analyze?url=https://example.com"
 ```
-**Sample Response:**
-<pre><code class="language-json">
+
+### Sample Response:
+```json
 {
   "url": "https://example.com",
-  "trust_score": 100,
-  "verdict": "Safe",
-  "reasons": {
-    "good_reasons": [...]
+  "domain": "example.com",
+  "result": {
+    "trust_score": 100,
+    "risk_score": 0,
+    "final_score": 100,
+    "verdict": "Safe",
+    "reasons": {
+      "good_reasons": [
+        "Long-standing domain history",
+        "Valid TLS/SSL certificate with secure cipher"
+      ],
+      "neutral_reasons": [
+        "Standard top-level domain"
+      ],
+      "bad_reasons": []
+    }
   }
 }
-</code></pre>
-Full response schema → [docs/api.md#example](docs/api.md#example) 
-
-## Detection Engine
-
-**21 concurrent goroutines** run across **7 signal categories**, producing **39 individual signals**. Every check emits a reason string — good, bad, or neutral — so the final score is always fully explainable. No black-box verdicts.
-
-Score formula: `finalScore = clamp(50 + (trustScore − riskScore) × 0.5)` → **Risky** < 30 · **Suspicious** 30–64 · **Safe** ≥ 65
-
-Short links are followed first (through any further short links) and the page they lead to is what gets scanned.
-
-> 50 is the neutral baseline — a URL with no signals scores exactly 50 (Suspicious), the right default for an unknown URL. Trust signals pull the score up, risk signals pull it down, each weighted at 0.5× so neither dominates alone. Both scores are individually clamped to 0–100 before the formula runs, preventing a single catastrophic signal from drowning all other context.
-
-**URL Signals** _(8 checks)_
-
-1. Raw IP address as hostname _(common evasion tactic)_
-2. Punycode / IDN encoding _(lookalike domain spoofing)_
-3. URL shortener _(followed to its destination; one that can't be followed is capped at Suspicious)_
-4. Excessive URL length _(over 150 characters; not counted on well-known sites)_
-5. Excessive URL path depth _(over 6 path segments; not counted on well-known sites)_
-6. Phishing keywords in URL path _(login, verify, secure, update…)_
-7. Excessive subdomain count
-8. Non-ASCII Unicode characters in hostname _(IDN homograph attack, e.g. аpple.com with Cyrillic а)_
-
-**HTTP / Network** _(4 checks, single HTTP request)_
-
-9. Redirect chain hop count _(only when the chain leaves the site)_
-10. Cross-domain redirect _(final destination differs from source domain, unless it's the same brand)_
-11. HSTS support _(read from the scanned site itself, not the last hop)_
-12. HTTP status code
-
-**DNS** _(3 checks)_
-
-13. NS record validity
-14. MX record validity
-15. IP resolution
-
-**TLS / SSL** _(2 checks, single TLS handshake)_
-
-16. TLS presence, and a certificate issued for a different hostname
-17. Certificate chain — validity, expiry, issuer, CT log status, known-bad fingerprints
-
-**Domain Intelligence** _(6 checks)_
-
-18. Domain rank _(position in top-1M global popularity list)_
-19. TLD trust / risk / ICANN status _(subdomains on hosting services and site builders are judged on their own, not on the host's reputation)_
-20. Domain age via RDAP/WHOIS _(under 90 days = risk; over 1, 3 and 5 years = growing trust)_
-21. DNSSEC _(cryptographic DNS response integrity)_
-22. Shannon entropy score _(flags algorithmically generated domains)_
-23. Typosquatting _(5,000 most-visited sites)_ & combo-squatting _(514 curated brands)_
-
-**Content Analysis** _(12 checks)_
-
-24. Login form on unranked or newly registered domain
-25. Payment form _(credit card, CVV fields)_
-26. Personal information form
-27. Hidden `<iframe>` _(credential theft / clickjacking vector)_
-28. Tracking pixels _(1×1 hidden images)_
-29. Brand claimed in the page title vs. hosting domain _(514 brands; lookalike letters folded)_
-30. Form submitting to an external domain
-31. Password field over unencrypted HTTP
-32. Script or meta-refresh redirect _(to a raw IP or another site)_
-33. Host or CDN warning page _(Cloudflare's phishing interstitial, 451 takedowns)_
-34. Page inside a WordPress system folder _(phishing kits on hacked sites)_
-35. Program download _(capped at Suspicious on hosts anyone can upload to)_
-
-**Threat Intelligence** _(4 checks)_
-
-36. Locally held threat lists _(PhishTank by default; URLhaus, OpenPhish opt-in)_
-37. Other pages on the same single-owner host listed
-38. Google Safe Browsing / Web Risk _(opt-in; Safe Browsing sees only hash prefixes)_
-39. PhishTank API _(only while its list isn't loaded)_
-
-![url.vet Analyzer Pipeline](assets/pipeline.png)
-
-
-
-## Limitations
-- Heuristic-based detection may produce false positives
-- No ML model (intentional, prioritizes explainability and auditability)
-
-Not a safety guarantee. Use alongside other defenses.
-
-
-## Architecture
-
-Four containerized services on a shared Docker bridge network. The Go backend is the only service that makes outbound calls to external APIs — the frontend, Chrome, and cache are strictly internal.
-
-![url.vet Architecture](assets/architecture.png)
-
-| Service | Role |
-|---|---|
-| `urlvet-web` | SvelteKit UI — :3000 (prod) · :5173 (dev) |
-| `urlvet-backend` | Go REST API & analyzer engine — :8080 |
-| `urlvet-chrome` | Headless Chrome — WebSocket :9222 |
-| `urlvet-valkey` | Valkey (Redis-compatible) — :6379, LRU cache, volume-persisted |
-
-### Request lifecycle
-1. URL submitted via the UI or REST API
-2. Backend validates and normalizes the URL (scheme inferred if missing)
-3. Valkey cache checked — a hit returns the full result immediately, no re-analysis
-4. Short links are followed to their destination, which is scanned instead
-5. On miss: 21 goroutines launch concurrently via `sync.WaitGroup`; panics are recovered per-task without failing the request
-6. Results collected → score aggregated → verdict assigned
-7. Complete result cached in Valkey (24 h TTL) and logged to scan history
-8. Response returned — trust score, verdict, per-signal reasons, redirect chain, page screenshot, per-task timings
-
-```text
-server/
-  cmd/aizen-detector/ entry point
-  internal/analyzer/    goroutine runner, task definitions, score aggregation
-  internal/service/
-    checks/             individual analyzer implementations
-    screenshot/         headless Chrome integration
-    cache/              Valkey client
-    threatfeeds/        threat lists, PhishTank, Safe Browsing, Web Risk
-    typosquat/          brand similarity engine
-web/website/            SvelteKit UI
-web/chrome-extension/   browser extension
-docker/                 dev & prod Compose configs
-docs/                   API, setup, architecture, security
 ```
 
+---
 
+## ⚙️ Detection Engine
 
-## Documentation
+**21 concurrent goroutines** evaluate **7 distinct security categories**, generating **39 individual signals**:
 
-| | |
-|---|---|
-| [Setup](docs/setup.md) | Local & Docker setup, Makefile commands |
-| [Configuration](docs/configuration.md) | All environment variables |
-| [Deployment](docs/deployment.md) | VPS, reverse proxy, firewall |
-| [API Reference](docs/api.md) | Endpoints, rate limits, example response |
-| [Architecture](docs/architecture.md) | Services, request lifecycle, detection engine |
-| [Security](docs/security.md) | Admin auth, password hashing |
-| [Performance](docs/performance.md) | Latency, resource usage, tuning |
-| [Design Decisions](docs/design-decisions.md) | Why things are built the way they are |
-| [Maintenance](docs/maintenance.md) | Cache, logs, backups |
-| [Glossary](docs/glossary.md) | Terms and acronyms |
+$$\text{Final Score} = \text{clamp}\left(50 + (\text{Trust Score} - \text{Risk Score}) \times 0.5\right)$$
 
-Interactive API docs (Swagger UI): [api.url.vet/swagger/index.html](https://api.url.vet/swagger/index.html)
+- **Safe**: $\ge 65$
+- **Suspicious**: $30 - 64$
+- **Risky**: $< 30$
 
+### Core Signal Categories
+1. **URL Structure**: Raw IP hosts, Punycode/IDN spoofing, URL shorteners, excessive length/depth, phishing keywords, homoglyph character analysis.
+2. **Network & HTTP**: Hop counts, cross-domain redirection, HSTS protocol enforcement, status codes.
+3. **DNS Validation**: NS records, MX records, IP resolution.
+4. **TLS/SSL Encryption**: Chain validity, certificate expiration, known-bad fingerprints, CT logging verification.
+5. **Domain Intelligence**: Popularity rank, TLD trust tier, RDAP/WHOIS domain age, Shannon entropy calculation.
+6. **Typosquatting & Combo-squatting**: Comparison against top-ranking global domains and protected brand names.
+7. **Content Inspection**: Credential phishing forms, credit card collection fields, hidden iframes, deceptive branding.
 
-## Citation
+---
 
-If you use this project in academic or research work, please cite it — see [CITATION.cff](CITATION.cff).
+## 🏛 Architecture
 
-## License
+```text
+aizen-detector/
+├── server/
+│   ├── api/index.go             # Vercel Go Serverless Function bridge
+│   ├── cmd/aizen-detector/      # Standalone server entrypoint
+│   ├── pkg/
+│   │   ├── analyzer/            # Goroutine runner & score aggregation
+│   │   ├── handler/             # REST endpoints (Gin framework)
+│   │   ├── service/             # 21 concurrent check implementations
+│   │   └── docs/                # OpenAPI / Swagger specification
+│   └── vercel.json              # Backend serverless configuration
+├── web/
+│   ├── website/                 # SvelteKit 5 web interface
+│   └── chrome-extension/        # Browser extension integration
+└── assets/                      # Brand assets and logos
+```
 
-Copyright (C) 2021–2026 Abhishek K P
+---
 
-url.vet is dual-licensed:
+## 👤 Author
 
-- **Community** — [GNU Affero General Public License v3.0](LICENSE). Free to use, modify, and self-host. Any modified version run over a network must make its source code available to users.
-- **Commercial** — A separate [commercial license](COMMERCIAL.md) is available for organizations that cannot comply with the AGPL-3.0 (e.g. closed-source SaaS).
-
-
-## Contributing
-
-- Found a bug? → [Open an issue](https://github.com/urlvet/urlvet/issues)
-- Have a question or idea? → [Start a discussion](https://github.com/urlvet/urlvet/discussions)
-- Want to contribute code? → [CONTRIBUTING.md](.github/CONTRIBUTING.md)
-
-If you found this project helpful, consider giving it a star.
-
-
-
-
-<!-- <div align="center">
-  <a href="https://star-history.com/#urlvet/urlvet&Date">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=urlvet/urlvet&type=Date&theme=dark" />
-      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=urlvet/urlvet&type=Date" />
-      <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=urlvet/urlvet&type=Date" />
-    </picture>
-  </a>
-</div> -->
-
+**Mayukh** ([@mayukhbyte](https://github.com/mayukhbyte))  
+*Contact: [hi@aizen.detector](mailto:hi@aizen.detector)*
