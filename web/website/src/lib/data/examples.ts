@@ -1,4 +1,4 @@
-// Example links offered on the landing page and by Vetty.
+// Example links offered on the landing page and by Friday.
 // The two "Fake" ones are lookalikes spelled with Cyrillic letters.
 
 export const EXAMPLES = [

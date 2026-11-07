@@ -30,7 +30,7 @@
   $: primary = data?.result;
   $: note = data ? incompleteNote(data.incomplete_checks, data.incomplete) : null;
   $: shortNote = shortLinkNote(data?.short_link) ?? redirectNote(data?.redirected_from);
-  // Vetty says this himself when he's around; otherwise it's a quiet line here.
+  // Friday says this himself when around; otherwise it's a quiet line here.
   // No joke on a Risky result, except the fake demo examples.
   $: demo = !!data && EXAMPLES.some((e) => e.hint === "Fake" && e.url === data.domain);
   $: egg =

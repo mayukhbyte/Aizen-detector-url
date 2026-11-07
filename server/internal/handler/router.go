@@ -56,7 +56,7 @@ func SetupRouter() *gin.Engine {
 	// Swagger UI — served at /swagger/index.html
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
-	// RootHandler returns basic info about the url.vet API service
+	// RootHandler returns basic info about the aizen.detector api service
 	r.GET("/", RootHandler)
 
 	// Unversioned global health check

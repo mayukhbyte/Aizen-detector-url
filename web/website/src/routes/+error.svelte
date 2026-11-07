@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>{$page.status === 404 ? "Page not found" : "Something went wrong"} | url.vet</title>
+  <title>{$page.status === 404 ? "Page not found" : "Something went wrong"} | aizen.detector</title>
   <meta name="robots" content="noindex" />
 </svelte:head>
 
@@ -38,7 +38,7 @@
       >
         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
       </svg>
-      Back to url.vet
+      Back to aizen.detector
     </a>
   </div>
 </div>

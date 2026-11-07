@@ -2,7 +2,7 @@ root = "."
 tmp_dir = "tmp"
 
 [build]
-cmd = "go build -o tmp/urlvet -buildvcs=false ./cmd/urlvet"
+cmd = "go build -o tmp/aizen-detector -buildvcs=false ./cmd/aizen-detector"
 bin = "tmp/urlvet"
 full_bin = "tmp/urlvet"
 

@@ -100,16 +100,25 @@
       : 'text-4xl md:text-[2.75rem]'}"
     class:intro
   >
-    <a href="/" on:click={() => (location.href = "/")} class="group">
-      <span
-        class="url relative text-[#b3a998] dark:text-[#6e665a] group-hover:text-gray-500 dark:group-hover:text-gray-400 transition-colors"
-        >url</span
-      ><span
-        class="dot inline-block -mx-[0.045em] transition-colors duration-500 {DOT_COLOR[dot]}"
-        data-state={dot}>.</span
-      ><span class="text-gray-900 dark:text-gray-100">vet</span>
+    <a href="/" on:click={() => (location.href = "/")} class="group inline-flex items-center justify-center gap-3 sm:gap-4 md:gap-5">
+      <img
+        src="/aizen-detector-normal.png"
+        alt="Aizen Detector Logo"
+        class="inline-block object-contain rounded-2xl shadow-lg border border-cyan-500/20 {isLanding
+          ? 'w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24'
+          : 'w-9 h-9 sm:w-11 sm:h-11'}"
+      />
+      <span class="inline-block">
+        <span
+          class="url relative text-[#b3a998] dark:text-[#6e665a] group-hover:text-gray-500 dark:group-hover:text-gray-400 transition-colors"
+          >aizen</span
+        ><span
+          class="dot inline-block -mx-[0.045em] transition-colors duration-500 {DOT_COLOR[dot]}"
+          data-state={dot}>.</span
+        ><span class="text-gray-900 dark:text-gray-100">detector</span>
+      </span>
     </a>
-    <span class="sr-only">&nbsp;(also known as URLvet)</span>
+    <span class="sr-only">&nbsp;(Aizen Detector)</span>
   </h1>
 
   <p
@@ -117,7 +126,7 @@
       ? 'mt-5 text-lg md:text-xl'
       : 'mt-3 text-base md:text-lg'}"
   >
-    <span class="sr-only">sketchy link? just url.vet it</span>
+    <span class="sr-only">sketchy link? just aizen detect it</span>
     <span
       aria-hidden="true"
       class="relative inline-flex flex-wrap items-baseline justify-center gap-x-[0.3em]"
@@ -133,7 +142,7 @@
           {/each}
         </span>
       {/if}
-      <!-- Right-aligned at a set width (see slotWidth), so "just url.vet it" stays put while typing. -->
+      <!-- Right-aligned at a set width (see slotWidth), so "just aizen detect it" stays put while typing. -->
       <span
         class="slot inline-block text-right whitespace-nowrap"
         style={slotWidth ? `width: ${slotWidth}px` : undefined}
@@ -150,7 +159,7 @@
       <span class="whitespace-nowrap" bind:offsetWidth={tailWidth}>
         just
         <span class="relative inline-block"
-          >url.vet<svg
+          >aizen detect<svg
             class:draw={isLanding}
             class="absolute left-0 -bottom-0.5 w-full h-[0.22em] overflow-visible text-accent-light dark:text-accent-dark"
             viewBox="0 0 100 8"
@@ -270,7 +279,7 @@
     }
   }
 
-  /* The underline under "url.vet" is drawn in left to right, like a pen stroke, once the
+  /* The underline under "aizen.detector" is drawn in left to right, like a pen stroke, once the
      page loads. A clip reveals it, because dash tricks don't scale with the stroke. */
   .draw {
     animation: draw-in 0.7s cubic-bezier(0.6, 0, 0.3, 1) 0.6s both;

@@ -17,7 +17,7 @@ The spec is also committed as `server/internal/docs/swagger.yaml`. To regenerate
 
 ```bash
 cd server
-swag init -g cmd/urlvet/urlvet.go -o internal/docs
+swag init -g cmd/aizen-detector/aizen-detector.go -o internal/docs
 ```
 
 Install the CLI once with: `go install github.com/swaggo/swag/cmd/swag@v1.16.4`

@@ -201,7 +201,7 @@
     </span>
     <div>
       <p class="text-sm font-medium text-gray-900 dark:text-gray-100">Report sent</p>
-      <p class="text-xs text-gray-500 dark:text-gray-400">Thanks for helping improve url.vet</p>
+      <p class="text-xs text-gray-500 dark:text-gray-400">Thanks for helping improve aizen.detector</p>
     </div>
   </div>
 {/if}

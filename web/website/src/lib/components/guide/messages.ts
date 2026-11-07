@@ -1,8 +1,8 @@
-// Everything Vetty says, in one place. Tone: the casual url.vet voice,
+// Everything Friday says, in one place. Tone: the casual aizen.detector voice,
 // with a wink at the old office assistant.
 import type { AnalyzeResult } from '../../types';
 
-export const NAME = 'Vetty';
+export const NAME = 'Friday';
 
 export const INTRO = [
   `Hi, I'm ${NAME}. Why click around when you can just ask me?`,
@@ -17,7 +17,7 @@ export const POKES = [
   'Okay, that tickles.',
 ];
 
-export const NUDGE = "Hi, I'm Vetty. Not sure what all this means? I can help.";
+export const NUDGE = "Hi, I'm Friday. Not sure what all this means? I can help.";
 /** The visitor's two replies to the nudge. */
 export const NUDGE_YES = 'What can you do?';
 export const NUDGE_NO = 'No thanks';
@@ -88,10 +88,10 @@ export const SCAN_FAILED = [
 
 export const HIDE_BYE = "Fine. I'll be down in the footer. I've been retired before.";
 
-/** "Who is Vetty?": what he is, what he can do, and why he's here. */
+/** "Who is Friday?": what they are, what they can do, and why they're here. */
 export const MEET = {
-  lead: `I'm ${NAME}, url.vet's helper.`,
-  why: "Checking a link shouldn't need a security degree. I'm here so anyone can use url.vet: I explain results in plain words and show you where everything is.",
+  lead: `I'm ${NAME}, Aizen Detector's helper.`,
+  why: "Checking a link shouldn't need a security degree. I'm here so anyone can use Aizen Detector: I explain results in plain words and show you where everything is.",
   canTitle: 'What I can do',
   can: [
     'Check a link for you, or a whole message with links in it',
@@ -106,10 +106,10 @@ export const MEET = {
 /** A message to send back to whoever shared the link, worded for the verdict. */
 export function warnMessage(verdict: string, domain: string, score: number, link: string): string {
   if (verdict === 'Risky')
-    return `I checked this link on url.vet and it looks like a scam (${domain}, ${score}/100). Please don't open it or enter any details there.\n\nWhy: ${link}`;
+    return `I checked this link on Aizen Detector and it looks like a scam (${domain}, ${score}/100). Please don't open it or enter any details there.\n\nWhy: ${link}`;
   if (verdict === 'Suspicious')
-    return `I checked this link on url.vet. ${domain} looks suspicious (${score}/100), so better not to enter any details there.\n\nWhy: ${link}`;
-  return `I checked this link on url.vet and ${domain} looks safe (${score}/100).\n\nDetails: ${link}`;
+    return `I checked this link on Aizen Detector. ${domain} looks suspicious (${score}/100), so better not to enter any details there.\n\nWhy: ${link}`;
+  return `I checked this link on Aizen Detector and ${domain} looks safe (${score}/100).\n\nDetails: ${link}`;
 }
 
 export const WARN_INTRO: Record<string, string> = {

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "url.vet: check links before you click",
-  "short_name": "url.vet",
+  "name": "Aizen Detector: check links before you click",
+  "short_name": "Aizen Detector",
   "version": "2.0.0",
   "description": "Sketchy link? Check any link or page in seconds, with every reason explained. Free, open source, no account.",
   "homepage_url": "https://url.vet",
@@ -12,7 +12,7 @@
     "128": "icons/icon-128.png"
   },
   "action": {
-    "default_title": "url.vet: check this page or a link",
+    "default_title": "Aizen Detector: check this page or a link",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/dot-brand-16.png",

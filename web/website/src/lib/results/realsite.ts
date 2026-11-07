@@ -33,7 +33,7 @@ function unmask(domain: string): string | null {
 
 export type RealSite = { domain: string; reason: 'brand' | 'lookalike' };
 
-/** The site a flagged page seems to imitate, so Vetty can point to the real one. */
+/** The site a flagged page seems to imitate, so Friday can point to the real one. */
 export function realSite(r: AnalyzeResult): RealSite | null {
   if (!r.result?.verdict || r.result.verdict === 'Safe') return null;
   const own = r.domain?.toLowerCase();

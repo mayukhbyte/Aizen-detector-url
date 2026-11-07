@@ -1,8 +1,8 @@
 <div align="center">
 
-# url.vet
+# Aizen Detector
 
-**sketchy link? just url.vet it**
+**sketchy link? just aizen detect it**
 
 **Website: [url.vet](https://url.vet)**
 
@@ -24,7 +24,7 @@ Open-source phishing detection engine for URLs and domains — paste any link an
 
 [⚡ Quick Start](#quick-start) · [⚙️ Detection Engine](#detection-engine) · [🏛 Architecture](#architecture) · [📚 Docs](#documentation) · [🤝 Contributing](#contributing)
 
-<sub>Also known as URLvet · Previously known as SafeSurf</sub>
+<sub>Aizen Detector · Formerly known as SafeSurf · Also known as URLvet</sub>
 
 </div>
 
@@ -225,7 +225,7 @@ Four containerized services on a shared Docker bridge network. The Go backend is
 
 ```text
 server/
-  cmd/urlvet/         entry point
+  cmd/aizen-detector/ entry point
   internal/analyzer/    goroutine runner, task definitions, score aggregation
   internal/service/
     checks/             individual analyzer implementations

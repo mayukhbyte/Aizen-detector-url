@@ -319,7 +319,7 @@
     const meetItem: Item = { label: `Who is ${NAME}?`, run: () => (view = "meet") };
     const example: Item = { label: "Try it with a sample link", run: () => (view = "examples") };
     const howItWorks: Item = {
-      label: "How does url.vet check a link?",
+      label: "How does aizen.detector check a link?",
       run: () => go("/how-it-works"),
     };
     const whoMade: Item = { label: "Who made this website?", run: () => go("/about") };
@@ -491,7 +491,7 @@
       <div
         bind:this={bubbleEl}
         role="dialog"
-        aria-label="{NAME}, the url.vet helper"
+        aria-label="{NAME}, the aizen.detector helper"
         transition:fly={{ y: 12, duration: 200 }}
         class="bubble pointer-events-auto relative w-[min(330px,calc(100vw-32px))] max-h-[calc(100vh-140px)] overflow-y-auto {BUBBLE} shadow-2xl shadow-black/15 text-left"
       >
@@ -603,9 +603,9 @@
             <p class="mt-4 text-sm text-gray-500">{MEET.note}</p>
           {:else if view === "check"}
             <form on:submit|preventDefault={checkForMe}>
-              <label for="vetty-check" class="block">{CHECK_FOR_ME}</label>
+              <label for="friday-check" class="block">{CHECK_FOR_ME}</label>
               <textarea
-                id="vetty-check"
+                id="friday-check"
                 bind:this={checkEl}
                 bind:value={checkInput}
                 rows="3"
@@ -646,9 +646,9 @@
               >
             </div>
           {:else if view === "warn"}
-            <label for="vetty-warn" class="block">{WARN_INTRO[verdict ?? "Risky"]}</label>
+            <label for="friday-warn" class="block">{WARN_INTRO[verdict ?? "Risky"]}</label>
             <textarea
-              id="vetty-warn"
+              id="friday-warn"
               bind:value={warnText}
               rows="6"
               class="mt-3 {FIELD} text-sm leading-relaxed text-gray-900 dark:text-gray-100 focus:outline-hidden focus:border-gray-500"
@@ -770,9 +770,9 @@
 
     <button
       type="button"
-      data-guide="vetty"
-      class="vetty pointer-events-auto rounded-full focus:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-400"
-      aria-label={open ? `Close ${NAME}` : `Open ${NAME}, the url.vet helper`}
+      data-guide="friday"
+      class="friday pointer-events-auto rounded-full focus:outline-hidden focus-visible:ring-2 focus-visible:ring-gray-400"
+      aria-label={open ? `Close ${NAME}` : `Open ${NAME}, the aizen.detector helper`}
       aria-expanded={open}
       title="{NAME} (press ?)"
       bind:this={vettyEl}
@@ -789,14 +789,14 @@
 {/if}
 
 <style>
-  .vetty {
+  .friday {
     transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
     filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
   }
-  .vetty:hover {
+  .friday:hover {
     transform: translateY(-3px) rotate(-3deg);
   }
-  /* little tail pointing down at Vetty */
+  /* little tail pointing down at Friday */
   .bubble::after {
     content: "";
     position: absolute;

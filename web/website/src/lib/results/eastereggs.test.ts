@@ -5,7 +5,6 @@ describe('easterEgg', () => {
   it.each([
     ['url.vet', 'Checking me?'],
     ['https://www.url.vet/about', 'Checking me?'],
-    ['https://github.com/urlvet/urlvet', 'where I live'],
     ['https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'Never gonna give you up'],
     ['https://youtu.be/dQw4w9WgXcQ', 'Never gonna give you up'],
     ['pаypal.com', 'Spot the difference'],

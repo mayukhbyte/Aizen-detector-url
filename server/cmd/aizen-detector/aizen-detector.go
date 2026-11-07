@@ -1,6 +1,6 @@
-// Package main is the entrypoint for the url.vet API.
+// Package main is the entrypoint for the aizen.detector API.
 //
-//	@title			url.vet API
+//	@title			aizen.detector api
 //	@version		1.0
 //	@description	URL safety analysis API. Checks phishing signals, redirects, TLS, DNS, brand mismatches, and more.
 //	@license.name	AGPL-3.0
@@ -40,7 +40,7 @@ import (
 
 func main() {
 	// Load .env file if it exists (non-fatal if missing)
-	dotenvErr := godotenv.Load("/app/.env")
+	dotenvErr := godotenv.Load(".env", "/app/.env")
 
 	logger.Init()
 

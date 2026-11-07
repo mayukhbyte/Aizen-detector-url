@@ -31,7 +31,7 @@
     },
     {
       label: "Try the API in Swagger UI",
-      note: "Send a few test requests to url.vet's server from your browser. Rate-limited, so not for production",
+      note: "Send a few test requests to aizen.detector's server from your browser. Rate-limited, so not for production",
       href: `${API_ORIGIN}/swagger/index.html`,
     },
   ];
@@ -115,27 +115,27 @@
 <svelte:window on:hashchange={openFromHash} />
 
 <svelte:head>
-  <title>How url.vet checks a link</title>
+  <title>How aizen.detector checks a link</title>
   <meta
     name="description"
-    content="The checks url.vet runs on every link, how they add up to a verdict, and answers to common questions."
+    content="The checks aizen.detector runs on every link, how they add up to a verdict, and answers to common questions."
   />
-  <meta property="og:title" content="How url.vet checks a link" />
+  <meta property="og:title" content="How aizen.detector checks a link" />
   <meta
     property="og:description"
-    content="The checks url.vet runs on every link, how they add up to a verdict, and answers to common questions."
+    content="The checks aizen.detector runs on every link, how they add up to a verdict, and answers to common questions."
   />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://url.vet/how-it-works" />
-  <meta property="og:image" content="https://url.vet/og" />
+  <meta property="og:url" content="https://aizen.detector/how-it-works" />
+  <meta property="og:image" content="https://aizen.detector/og" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="How url.vet checks a link" />
+  <meta name="twitter:title" content="How aizen.detector checks a link" />
   <meta
     name="twitter:description"
-    content="The checks url.vet runs on every link, how they add up to a verdict, and answers to common questions."
+    content="The checks aizen.detector runs on every link, how they add up to a verdict, and answers to common questions."
   />
-  <meta name="twitter:image" content="https://url.vet/og" />
-  <link rel="canonical" href="https://url.vet/how-it-works" />
+  <meta name="twitter:image" content="https://aizen.detector/og" />
+  <link rel="canonical" href="https://aizen.detector/how-it-works" />
   {@html `<script type="application/ld+json">${JSON.stringify(schemaFAQ)}</script>`}
 </svelte:head>
 
@@ -178,7 +178,7 @@
   <section class="mt-20 scroll-mt-20" id="result">
     <h2 class="font-serif text-3xl md:text-4xl tracking-[-0.01em]">What you get back</h2>
     <p class="mt-5 text-[17px] leading-relaxed text-gray-700 dark:text-gray-300">
-      url.vet checks the page itself, live, not just a list of known bad links. A few seconds after
+      aizen.detector checks the page itself, live, not just a list of known bad links. A few seconds after
       you press Scan, you get something like this:
     </p>
 
@@ -416,9 +416,7 @@
       Self-hosting and API docs
     </h2>
     <p class="mt-4 text-[16px] leading-relaxed text-gray-600 dark:text-gray-400">
-      url.vet is <a href={REPO} class={LINK} target="_blank" rel="noopener noreferrer"
-        >open source</a
-      >. You can run the whole thing on your server, or use its API in your app.
+      Aizen Detector is an explainable detection engine. You can run the whole thing on your server, or use its API in your app.
     </p>
     <ul class="mt-6">
       {#each DEV_LINKS as link}

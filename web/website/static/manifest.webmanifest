@@ -1,6 +1,6 @@
 {
-  "name": "url.vet",
-  "short_name": "url.vet",
+  "name": "Aizen Detector",
+  "short_name": "Aizen Detector",
   "description": "Sketchy link? Check it before you click. Free, open source, no signup.",
   "start_url": "/",
   "scope": "/",

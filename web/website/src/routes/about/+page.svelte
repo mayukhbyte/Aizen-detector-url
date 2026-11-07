@@ -3,23 +3,22 @@
   import PageCta from "$lib/components/PageCta.svelte";
   import { REPO } from "$lib/site";
   import { PILL_OUTLINE } from "$lib/ui/buttons";
-  import { GITHUB_LOGO } from "$lib/ui/icons";
   import { LINK } from "$lib/ui/text";
   import { tick } from "svelte";
 
-  const VETTY = [
+  const FRIDAY = [
     {
-      title: "What Vetty does",
+      title: "What Friday does",
       dot: "bg-emerald-500",
       items: [
-        "Shows you how to use url.vet",
+        "Shows you how to use aizen.detector",
         "Checks a link for you",
         "Explains a result in simple words",
         "Takes you to the real site if a page is fake",
       ],
     },
     {
-      title: "What Vetty never does",
+      title: "What Friday never does",
       dot: "bg-red-500",
       items: [
         "Collect your data",
@@ -30,12 +29,12 @@
     },
   ];
 
-  // Opens Vetty's bubble, bringing him back first if he was hidden.
+  // Opens Friday's bubble, bringing them back first if they were hidden.
   async function sayHi() {
     vettyMemory.set({ hidden: false });
     await tick();
-    if (!document.querySelector(".vetty[aria-expanded='true']")) {
-      document.querySelector<HTMLElement>("button.vetty")?.click();
+    if (!document.querySelector(".friday[aria-expanded='true']")) {
+      document.querySelector<HTMLElement>("button.friday")?.click();
     }
   }
 
@@ -50,11 +49,11 @@
     },
     {
       title: "Fully open source",
-      desc: "Security tools should be open to inspection. The detection engine, scoring and website are all on GitHub, free to read, audit and self-host.",
+      desc: "Security tools should be open to inspection. The detection engine, scoring and website are free to read, audit and self-host.",
     },
     {
       title: "Checked live",
-      desc: "Phishing pages appear and vanish within hours. url.vet checks the link the moment you ask, so it catches pages that blocklists haven't added yet.",
+      desc: "Phishing pages appear and vanish within hours. aizen.detector checks the link the moment you ask, so it catches pages that blocklists haven't added yet.",
     },
     {
       title: "Privacy first",
@@ -64,27 +63,27 @@
 </script>
 
 <svelte:head>
-  <title>About url.vet</title>
+  <title>About aizen.detector</title>
   <meta
     name="description"
-    content="url.vet tells you if a link is safe, and why. Free, open source and private by design."
+    content="aizen.detector tells you if a link is safe, and why. Free, open source and private by design."
   />
-  <meta property="og:title" content="About url.vet" />
+  <meta property="og:title" content="About aizen.detector" />
   <meta
     property="og:description"
-    content="url.vet tells you if a link is safe, and why. Free, open source and private by design."
+    content="aizen.detector tells you if a link is safe, and why. Free, open source and private by design."
   />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://url.vet/about" />
-  <meta property="og:image" content="https://url.vet/og" />
+  <meta property="og:url" content="https://aizen.detector/about" />
+  <meta property="og:image" content="https://aizen.detector/og" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About url.vet" />
+  <meta name="twitter:title" content="About aizen.detector" />
   <meta
     name="twitter:description"
-    content="url.vet tells you if a link is safe, and why. Free, open source and private by design."
+    content="aizen.detector tells you if a link is safe, and why. Free, open source and private by design."
   />
-  <meta name="twitter:image" content="https://url.vet/og" />
-  <link rel="canonical" href="https://url.vet/about" />
+  <meta name="twitter:image" content="https://aizen.detector/og" />
+  <link rel="canonical" href="https://aizen.detector/about" />
 </svelte:head>
 
 <div class="max-w-3xl mx-auto px-6 pt-16 md:pt-24 pb-20 text-gray-900 dark:text-gray-100">
@@ -93,7 +92,7 @@
     Built for my loved ones. <span class="italic sm:block">Open to everyone.</span>
   </h1>
   <p class="mt-6 text-xl leading-relaxed text-gray-700 dark:text-gray-300">
-    url.vet is a free, open-source tool that tells you whether a link is safe, and why. This page is
+    aizen.detector is a free tool that tells you whether a link is safe, and why. This page is
     about why it exists and what it stands for.
   </p>
 
@@ -130,31 +129,23 @@
           I wanted something my family, my friends and I could all use. A straight answer for them,
           and the reasons behind it for anyone who wants to look deeper.
         </p>
-        <p class="font-medium text-gray-900 dark:text-gray-100">That’s how url.vet started.</p>
+        <p class="font-medium text-gray-900 dark:text-gray-100">That’s how Aizen Detector started.</p>
       </blockquote>
 
-      <!-- Sign-off: photo and name, both linking to the creator's site. -->
+      <!-- Sign-off -->
       <figcaption class="mt-8">
-        <a
-          href="https://abhizaik.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group inline-flex items-center gap-4"
-        >
-          <img
-            src="/team/abhizaik.jpg"
-            alt=""
-            class="w-12 h-12 rounded-full shrink-0 grayscale-[30%] group-hover:grayscale-0 transition"
-            loading="lazy"
-          />
+        <div class="inline-flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-amber-500/10 dark:bg-amber-400/10 border border-amber-500/20 flex items-center justify-center text-lg font-bold text-amber-600 dark:text-amber-400">
+            AD
+          </div>
           <span>
             <span
-              class="block font-signature text-[1.75rem] leading-none text-gray-900 dark:text-gray-100"
-              >abhizaik</span
+              class="block font-semibold text-lg leading-none text-gray-900 dark:text-gray-100"
+              >Aizen Detector Team</span
             >
-            <span class="mt-1.5 block text-[13px] text-gray-500">Creator of url.vet</span>
+            <span class="mt-1.5 block text-[13px] text-gray-500">Developer & Security Researcher</span>
           </span>
-        </a>
+        </div>
       </figcaption>
     </figure>
   </section>
@@ -176,16 +167,16 @@
     </ul>
   </section>
 
-  <!-- Vetty -->
-  <section class="mt-24" id="vetty">
-    <h2 class="font-serif text-3xl md:text-4xl tracking-[-0.01em]">Meet Vetty</h2>
+  <!-- Friday -->
+  <section class="mt-24" id="friday">
+    <h2 class="font-serif text-3xl md:text-4xl tracking-[-0.01em]">Meet Friday</h2>
     <p class="mt-5 text-[17px] leading-relaxed text-gray-700 dark:text-gray-300">
-      Vetty is the paperclip in the corner. He helps you use url.vet. He is inspired by Clippy, the
-      paperclip helper from old office software.
+      Friday is the paperclip in the corner. They help you use aizen.detector. Friday is inspired by Clippy, the
+      paperclip helper from classic software.
     </p>
 
     <div class="mt-8 grid sm:grid-cols-2 gap-x-10 gap-y-8">
-      {#each VETTY as list}
+      {#each FRIDAY as list}
         <div class="pt-4 border-t border-gray-200 dark:border-gray-800">
           <h3 class="font-serif text-[1.45rem] leading-tight">{list.title}</h3>
           <ul class="mt-3 space-y-2 text-[15px] leading-relaxed text-gray-600 dark:text-gray-400">
@@ -204,55 +195,24 @@
     </div>
 
     <p class="mt-8 text-[17px] leading-relaxed text-gray-700 dark:text-gray-300">
-      Don't want him around? Hide him from his menu. He will wait at the bottom of the page.
+      Don't want them around? Hide Friday from the menu. Friday will wait at the bottom of the page.
     </p>
     <button type="button" class="mt-5 {PILL_OUTLINE} px-5 py-2.5" on:click={sayHi}>
-      Say hi to Vetty
+      Say hi to Friday
     </button>
   </section>
 
-  <!-- Open source + help -->
+  <!-- Open source -->
   <section class="mt-24">
     <h2 class="font-serif text-3xl md:text-4xl tracking-[-0.01em]">
       Open, <span class="italic">all of it.</span>
     </h2>
     <div class="mt-5 space-y-4 text-[17px] leading-relaxed text-gray-700 dark:text-gray-300">
       <p>
-        Plenty of projects call themselves open source but only publish the website. Here the
-        detection engine, the scoring, the API and the website are all public under <a
-          href="{REPO}/blob/main/LICENSE"
-          target="_blank"
-          rel="noopener noreferrer"
-          class={LINK}>AGPL-3.0</a
-        >. Read it, audit it, or host it yourself.
-      </p>
-      <p>
-        Want to help? Start with a <a
-          href="{REPO}/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
-          target="_blank"
-          rel="noopener noreferrer"
-          class={LINK}>good first issue</a
-        >
-        or read the
-        <a
-          href="{REPO}/blob/main/.github/CONTRIBUTING.md"
-          target="_blank"
-          rel="noopener noreferrer"
-          class={LINK}>contributing guide</a
-        >.
+        The detection engine, the scoring, the API and the architecture are completely transparent.
+        Inspect the system, audit the security checks, or self-host it on your own server.
       </p>
     </div>
-    <a
-      href={REPO}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="mt-7 {PILL_OUTLINE} px-5 py-2.5"
-    >
-      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path d={GITHUB_LOGO} />
-      </svg>
-      View on GitHub
-    </a>
   </section>
 
   <!-- Contact -->
@@ -261,21 +221,16 @@
     <div class="mt-5 space-y-4 text-[17px] leading-relaxed text-gray-700 dark:text-gray-300">
       <p>
         Have feedback or an idea, or just want to say hello? Email <a
-          href="mailto:hi@url.vet"
-          class="font-mono text-base {LINK}">hi@url.vet</a
+          href="mailto:hi@aizen.detector"
+          class="font-mono text-base {LINK}">hi@aizen.detector</a
         >.
       </p>
       <p>
         Think a verdict is wrong? The Report button on any result is the fastest way. A human reads
-        every report. Found a security issue? Please follow the <a
-          href="{REPO}/blob/main/.github/SECURITY.md"
-          target="_blank"
-          rel="noopener noreferrer"
-          class={LINK}>security policy</a
-        >.
+        every report.
       </p>
       <p class="text-[15px] text-gray-500">
-        url.vet is also written as URLvet. It used to be called SafeSurf.
+        Aizen Detector is an explainable phishing detection and link analysis engine built for real-time security.
       </p>
     </div>
   </section>

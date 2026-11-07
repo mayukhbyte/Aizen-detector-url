@@ -3,7 +3,7 @@
   import Face from "./Face.svelte";
   import type { Mood } from "./mood";
 
-  // Vetty: a paperclip helper in the spirit of the classic office assistant.
+  // Friday: a paperclip helper in the spirit of the classic office assistant.
   // Silver wire, big eyes on the wire, bushy brows, leaning in to help.
   // Drawn from scratch; not Microsoft's artwork.
   export let mood: Mood = "idle";
@@ -41,7 +41,7 @@
 
             <!-- left arm -->
             {#if mood === "point"}
-              <!-- raised, pointing up-left (Vetty sits bottom-right, the tour targets are above him) -->
+              <!-- raised, pointing up-left (Friday sits bottom-right, the tour targets are above them) -->
               <path d="M24 44 Q16 38 9 29" class="ink" stroke-width="2.4" />
               <circle cx="8.2" cy="27.8" r="1.8" style="fill: var(--ink)" />
             {:else if mood === "alarmed"}

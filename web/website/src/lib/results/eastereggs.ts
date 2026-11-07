@@ -9,16 +9,8 @@ const RICKROLL = 'dQw4w9WgXcQ';
 
 const EGGS: Egg[] = [
   {
-    test: (_, h) => h === 'url.vet',
+    test: (_, h) => h === 'url.vet' || h === 'localhost',
     say: "Checking me? Bold. I'd do the same.",
-  },
-  {
-    test: (u, h) => h === 'github.com' && u.pathname.toLowerCase().startsWith('/urlvet/urlvet'),
-    say: "That's where I live. A star wouldn't hurt.",
-  },
-  {
-    test: (_, h) => h === 'abhizaik.com',
-    say: "That's the person who built me. Seems trustworthy, but I'm biased.",
   },
   {
     test: (u, h) =>

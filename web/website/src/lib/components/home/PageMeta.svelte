@@ -28,7 +28,7 @@
     if (link && originalIcon) link.href = originalIcon;
   });
 
-  const SITE_TITLE = "url.vet (URLvet): Is this link safe?";
+  const SITE_TITLE = "aizen.detector: Is this link safe?";
   const SITE_DESC =
     "Paste any link to see if it's safe, suspicious or risky, and why. Free, no signup.";
 
@@ -38,9 +38,9 @@
   const schemaSoftwareApp = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "url.vet",
-    alternateName: ["URLvet", "urlvet", "url vet"],
-    url: "https://url.vet",
+    name: "aizen.detector",
+    alternateName: ["aizen.detector", "Aizen Detector"],
+    url: "https://aizen.detector",
     description:
       "A free link checker that spots phishing, lookalike addresses and other risky links, and shows the reasons behind every verdict.",
     applicationCategory: "SecurityApplication",
@@ -54,11 +54,8 @@
     },
     creator: {
       "@type": "Person",
-      name: "abhizaik",
-      url: "https://abhizaik.com",
+      name: "Mayukh",
     },
-    license: `${REPO}/blob/main/LICENSE`,
-    codeRepository: REPO,
     featureList: [
       "Real-time URL scanning",
       "Phishing detection",
@@ -69,27 +66,26 @@
       "IP and infrastructure analysis",
       "No signup required",
       "Free to use",
-      "Open source (AGPL-3.0)",
     ],
   };
 </script>
 
 <svelte:head>
   {#if shareDomain}
-    {@const title = `Is ${shareDomain} safe? | url.vet`}
+    {@const title = `Is ${shareDomain} safe? | aizen.detector`}
     {@const desc = verdict
-      ? `url.vet rated ${shareDomain} ${verdict}. See why, or check another link for free.`
+      ? `aizen.detector rated ${shareDomain} ${verdict}. See why, or check another link for free.`
       : `See if ${shareDomain} is safe to open, and why. Free, no signup.`}
-    {@const ogImage = `https://url.vet/og?domain=${encodeURIComponent(shareDomain)}${verdict ? `&v=${encodeURIComponent(verdict)}` : ""}${score !== undefined ? `&s=${score}` : ""}`}
+    {@const ogImage = `https://aizen.detector/og?domain=${encodeURIComponent(shareDomain)}${verdict ? `&v=${encodeURIComponent(verdict)}` : ""}${score !== undefined ? `&s=${score}` : ""}`}
     <title>{liveTitle ?? title}</title>
     <meta name="description" content={desc} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={desc} />
     <meta property="og:type" content="website" />
-    <link rel="canonical" href="https://url.vet" />
+    <link rel="canonical" href="https://aizen.detector" />
     <meta
       property="og:url"
-      content={currentUrl || `https://url.vet/?q=${encodeURIComponent(queryUrl)}`}
+      content={currentUrl || `https://aizen.detector/?q=${encodeURIComponent(queryUrl)}`}
     />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
@@ -103,14 +99,14 @@
     <meta name="description" content={SITE_DESC} />
     <meta property="og:title" content={SITE_TITLE} />
     <meta property="og:description" content={SITE_DESC} />
-    <link rel="canonical" href="https://url.vet" />
+    <link rel="canonical" href="https://aizen.detector" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://url.vet" />
-    <meta property="og:image" content="https://url.vet/og" />
+    <meta property="og:url" content="https://aizen.detector" />
+    <meta property="og:image" content="https://aizen.detector/og" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://url.vet/og" />
+    <meta name="twitter:image" content="https://aizen.detector/og" />
     <meta name="twitter:title" content={SITE_TITLE} />
     <meta name="twitter:description" content={SITE_DESC} />
     {@html `<script type="application/ld+json">${JSON.stringify(schemaSoftwareApp)}</script>`}

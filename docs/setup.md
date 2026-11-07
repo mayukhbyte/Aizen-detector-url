@@ -83,7 +83,7 @@ These commands allow running the backend and frontend directly, without Docker. 
 ```powershell
 # Backend
 cd server
-go build -o urlvet ./cmd/urlvet
+go build -o aizen-detector ./cmd/aizen-detector
 air
 
 # Frontend

@@ -1,8 +1,8 @@
 {
-  "name": "urlvet-chrome-extension",
+  "name": "aizen-detector-chrome-extension",
   "private": true,
   "version": "2.0.0",
-  "description": "url.vet for Chrome",
+  "description": "Aizen Detector for Chrome",
   "type": "module",
   "scripts": {
     "build": "node build.mjs",

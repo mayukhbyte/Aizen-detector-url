@@ -8,7 +8,7 @@ import (
 
 func RootHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"service": "url.vet API",
+		"service": "aizen.detector api",
 		"status":  "running",
 		"version": "v1",
 	})

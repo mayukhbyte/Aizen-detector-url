@@ -1831,7 +1831,7 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "",
 	BasePath:         "/api/v1",
 	Schemes:          []string{},
-	Title:            "url.vet API",
+	Title:            "aizen.detector api",
 	Description:      "URL safety analysis API. Checks phishing signals, redirects, TLS, DNS, brand mismatches, and more.",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,

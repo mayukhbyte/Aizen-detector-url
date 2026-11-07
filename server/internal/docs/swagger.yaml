@@ -688,7 +688,7 @@ info:
     brand mismatches, and more.
   license:
     name: AGPL-3.0
-  title: url.vet API
+  title: aizen.detector api
   version: "1.0"
 paths:
   /admin/cache:

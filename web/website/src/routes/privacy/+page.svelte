@@ -75,27 +75,27 @@
 </script>
 
 <svelte:head>
-  <title>Privacy | url.vet</title>
+  <title>Privacy | aizen.detector</title>
   <meta
     name="description"
     content="We check the link, not you. No accounts, cookies or analytics, nothing sold, and no IP addresses in our logs."
   />
-  <meta property="og:title" content="Privacy | url.vet" />
+  <meta property="og:title" content="Privacy | aizen.detector" />
   <meta
     property="og:description"
     content="We check the link, not you. No accounts, cookies or analytics, nothing sold, and no IP addresses in our logs."
   />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://url.vet/privacy" />
-  <meta property="og:image" content="https://url.vet/og" />
+  <meta property="og:url" content="https://aizen.detector/privacy" />
+  <meta property="og:image" content="https://aizen.detector/og" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Privacy | url.vet" />
+  <meta name="twitter:title" content="Privacy | aizen.detector" />
   <meta
     name="twitter:description"
     content="We check the link, not you. No accounts, cookies or analytics, nothing sold, and no IP addresses in our logs."
   />
-  <meta name="twitter:image" content="https://url.vet/og" />
-  <link rel="canonical" href="https://url.vet/privacy" />
+  <meta name="twitter:image" content="https://aizen.detector/og" />
+  <link rel="canonical" href="https://aizen.detector/privacy" />
 </svelte:head>
 
 <div class="max-w-3xl mx-auto px-6 pt-16 md:pt-24 pb-20 text-gray-900 dark:text-gray-100">
@@ -104,7 +104,7 @@
     We check the link, <span class="italic">not you.</span>
   </h1>
   <p class="mt-6 text-xl leading-relaxed text-gray-700 dark:text-gray-300">
-    url.vet needs the link you paste, and nothing else. Here is exactly what happens to it.
+    aizen.detector needs the link you paste, and nothing else. Here is exactly what happens to it.
   </p>
 
   <!-- At a glance: what we don't have, as one statement; what we keep, as three figures -->
@@ -184,7 +184,7 @@
       {/each}
     </dl>
     <p class="mt-4 text-[17px] leading-relaxed text-gray-700 dark:text-gray-300">
-      Everything this website loads (fonts, images, code) comes from url.vet itself.
+      Everything this website loads (fonts, images, code) comes from aizen.detector itself.
     </p>
   </section>
 
@@ -199,7 +199,7 @@
   <section class="mt-20">
     <h2 class="font-serif text-3xl md:text-4xl tracking-[-0.01em]">In your browser</h2>
     <p class="mt-5 text-[17px] leading-relaxed text-gray-700 dark:text-gray-300">
-      Your browser remembers your light or dark theme and whether you've met or hidden Vetty. That
+      Your browser remembers your light or dark theme and whether you've met or hidden Friday. That
       stays on your device, and clearing your site data removes it.
     </p>
   </section>
@@ -210,7 +210,7 @@
       It checks pages as you open them, by sending only the page's address, the same way as a scan
       here. The 10,000 best-known sites are never sent: the extension keeps that list on your
       device. Your settings and trusted sites are kept by your browser, and synced by it if you use
-      browser sync; url.vet never receives them. You can turn the automatic checks off in its
+      browser sync; aizen.detector never receives them. You can turn the automatic checks off in its
       settings.
     </p>
   </section>
@@ -218,33 +218,15 @@
   <section class="mt-20">
     <h2 class="font-serif text-3xl md:text-4xl tracking-[-0.01em]">Your rights</h2>
     <p class="mt-5 text-[17px] leading-relaxed text-gray-700 dark:text-gray-300">
-      url.vet is run by <a
-        href="https://abhizaik.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class={LINK}>abhizaik</a
-      >. We hold nothing tied to your name. To ask what we hold about a link you scanned or
-      reported, or to have a report deleted, email
-      <a href="mailto:hi@url.vet" class="font-mono text-base {LINK}">hi@url.vet</a>.
+      aizen.detector is run by mayukh. We hold nothing tied to your name. To ask what we hold about a link you scanned or
+      reported, or to have a report deleted, reach out to our team.
     </p>
   </section>
 
   <section class="mt-20">
     <h2 class="font-serif text-3xl md:text-4xl tracking-[-0.01em]">Verify it</h2>
     <p class="mt-5 text-[17px] leading-relaxed text-gray-700 dark:text-gray-300">
-      Everything above is in the <a
-        href={REPO}
-        target="_blank"
-        rel="noopener noreferrer"
-        class={LINK}>source code</a
-      >, and you can run your own copy if you'd rather not use ours. Every change to this page is
-      public too, in its
-      <a
-        href="{REPO}/commits/main/web/website/src/routes/privacy/+page.svelte"
-        target="_blank"
-        rel="noopener noreferrer"
-        class={LINK}>history on GitHub</a
-      >.
+      Everything described above is built directly into our codebase, which you can verify and run locally.
     </p>
   </section>
 

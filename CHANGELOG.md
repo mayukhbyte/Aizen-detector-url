@@ -73,8 +73,8 @@ First release of the Go rewrite.
 
 These came before the Go rewrite, are no longer maintained, and share no code with the versions above.
 
-- **SafeSurf Flask app** (tag `safesurf-flask`, 2024-09-01): a Python/Flask website that checked links with rules, domain data, SSL details and screenshots. No machine learning.
-- **SafeSurf ML** (tag `safesurf-ml`, 2021-11-24): the first version, which classified links with an XGBoost model trained on lists of phishing and legitimate URLs.
+- **Aizen Detector (formerly SafeSurf) Flask app** (tag `safesurf-flask`, 2024-09-01): a Python/Flask website that checked links with rules, domain data, SSL details and screenshots. No machine learning.
+- **Aizen Detector (formerly SafeSurf) ML** (tag `safesurf-ml`, 2021-11-24): the first version, which classified links with an XGBoost model trained on lists of phishing and legitimate URLs.
 
 [0.4.0]: https://github.com/urlvet/urlvet/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/urlvet/urlvet/compare/v0.2.0...v0.3.0

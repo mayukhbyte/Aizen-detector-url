@@ -12,7 +12,6 @@
   import { scanState } from "../lib/components/guide/store";
   import ResultSection from "../lib/components/ResultSection.svelte";
   import ScanProgress from "../lib/components/ScanProgress.svelte";
-  import Shoutouts from "../lib/components/Shoutouts.svelte";
   import type { AnalyzeResult } from "../lib/types";
   import { localAddressMessage } from "../lib/results/eastereggs";
   import {
@@ -54,9 +53,9 @@
   };
   $: verdictNow = scanResult?.result?.verdict;
   $: liveTitle = loading
-    ? `Checking ${getDomainFromUrl(formatUrl(input)) || "link"}… | url.vet`
+    ? `Checking ${getDomainFromUrl(formatUrl(input)) || "link"}… | Aizen Detector`
     : scanResult && verdictNow && VERDICT_TAB[verdictNow]
-      ? `${verdictNow}: ${scanResult.domain} | url.vet`
+      ? `${verdictNow}: ${scanResult.domain} | Aizen Detector`
       : undefined;
   $: verdictDot = !loading && verdictNow ? VERDICT_TAB[verdictNow] : undefined;
 
@@ -185,7 +184,7 @@
   }
 
   onMount(() => {
-    // Start fresh so Vetty doesn't react to a result from an earlier visit to this page.
+    // Start fresh so Friday doesn't react to a result from an earlier visit to this page.
     scanState.set({ status: "idle" });
     const params = new URLSearchParams(window.location.search);
     const q = params.get("q");
@@ -214,7 +213,7 @@
         (document.getElementById("url-input") as HTMLInputElement | null)?.focus();
       }
       if (e.key === "Escape") {
-        // Escape belongs to an open dialog (Vetty, the tour) before it clears the page.
+        // Escape belongs to an open dialog (Friday, the tour) before it clears the page.
         if (document.querySelector('[role="dialog"]')) return;
         if (scanResult || error) clearResult();
         else input = "";
@@ -306,11 +305,5 @@
         </div>
       {/if}
     </div>
-
-    {#if isLanding}
-      <div class="mt-8 w-full">
-        <Shoutouts />
-      </div>
-    {/if}
   </div>
 </section>

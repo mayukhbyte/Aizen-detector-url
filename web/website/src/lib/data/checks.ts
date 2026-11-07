@@ -109,7 +109,7 @@ export const CHECK_GROUPS: CheckGroup[] = [
       trust('Signed DNS records (DNSSEC)'),
       info('How random the name looks'),
       info(
-        "A site on a hosting service or site builder (github.io, vercel.app, weebly.com) is judged on its own, not on the host's reputation"
+        "A site on a hosting service or site builder (vercel.app, netlify.app, weebly.com) is judged on its own, not on the host's reputation"
       ),
     ],
     against:

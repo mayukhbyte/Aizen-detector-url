@@ -155,7 +155,7 @@ Two signals cap the verdict at **Suspicious** (score 64) instead of adding risk,
 
 ```
 server/
-├── cmd/urlvet/           entry point — init, router setup, graceful shutdown
+├── cmd/aizen-detector/   entry point — init, router setup, graceful shutdown
 ├── internal/
 │   ├── analyzer/
 │   │   ├── analyze.go      task registration, cache integration

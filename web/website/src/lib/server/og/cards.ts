@@ -19,11 +19,11 @@ function brand(): Node {
       color: OG.text,
     },
     h('div', { width: 12, height: 12, borderRadius: 999, background: OG.accent }),
-    'url.vet'
+    'aizen.detector'
   );
 }
 
-/** Hand-drawn underline, like the one under "url.vet" in the site tagline. */
+/** Hand-drawn underline, like the one under "aizen.detector" in the site tagline. */
 function swash(width: number): Node {
   return el(
     'svg',
@@ -67,9 +67,9 @@ function footer(): Node {
     h(
       'div',
       { fontFamily: OG.serif, fontStyle: 'italic', fontSize: 32, color: OG.muted },
-      'sketchy link? just url.vet it'
+      'sketchy link? just aizen detect it'
     ),
-    h('div', { fontFamily: OG.mono, fontSize: 20, color: OG.faint, letterSpacing: 1 }, 'url.vet')
+    h('div', { fontFamily: OG.mono, fontSize: 20, color: OG.faint, letterSpacing: 1 }, 'aizen.detector')
   );
 }
 
@@ -257,7 +257,7 @@ export function siteCard(): Node {
         gap: 14,
       },
       h('div', {}, 'sketchy link? just'),
-      h('div', { position: 'relative' }, 'url.vet', swash(124)),
+      h('div', { position: 'relative' }, 'aizen detect', swash(124)),
       h('div', {}, 'it')
     ),
     h(

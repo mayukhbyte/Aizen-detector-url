@@ -1,8 +1,8 @@
 <div align="center">
 
-# url.vet
+# Aizen Detector
 
-**链接看起来可疑？就用 url.vet 检测一下。**
+**链接看起来可疑？就用 Aizen Detector 检测一下。**
 
 **网站：[url.vet](https://url.vet)**
 
@@ -18,7 +18,7 @@
 
 [⚡ 快速开始](#快速开始) · [⚙️ 检测引擎](#检测引擎) · [🏛 架构](#架构) · [📚 文档](#文档) · [🤝 贡献](#贡献)
 
-<sub>英文名 URLvet · 原名 SafeSurf</sub>
+<sub>英文名 Aizen Detector · 原名 SafeSurf</sub>
 
 </div>
 
@@ -209,7 +209,7 @@ curl "http://localhost:8080/api/v1/analyze?url=https://example.com"
 
 ```text
 server/
-  cmd/urlvet/           入口点
+  cmd/aizen-detector/ 入口点
   internal/analyzer/    goroutine 运行器、任务定义、评分汇总
   internal/service/
     checks/             各个独立分析器实现

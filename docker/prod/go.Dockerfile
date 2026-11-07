@@ -16,7 +16,7 @@ RUN go mod download
 COPY . .
 
 # Build static binary
-RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o urlvet ./cmd/urlvet
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o aizen-detector ./cmd/aizen-detector
 
 
 # ============================

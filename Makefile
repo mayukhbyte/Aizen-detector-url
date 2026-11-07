@@ -152,7 +152,7 @@ sh-backend: ## Enter backend container shell (dev)
 
 local-build-backend: start-timer ## Local Go build
 	$(info "Building backend locally...")
-	cd $(BACKEND_DIR) && go build -o urlvet ./cmd/urlvet
+	cd $(BACKEND_DIR) && go build -o aizen-detector ./cmd/aizen-detector
 	$(timer)
 
 local-build-frontend: start-timer ## Local Svelte build

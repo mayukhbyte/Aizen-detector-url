@@ -15,15 +15,15 @@ export const FAQ_GROUPS: { title: string; items: Faq[] }[] = [
     items: [
       {
         q: 'How do I check if a link is safe?',
-        a: 'Paste it into the box on the url.vet home page and press Scan. A few seconds later you get a verdict (Safe, Suspicious or Risky), a score from 0 to 100, and the reasons behind it. You never have to open the link yourself.',
+        a: 'Paste it into the box on the aizen.detector home page and press Scan. A few seconds later you get a verdict (Safe, Suspicious or Risky), a score from 0 to 100, and the reasons behind it. You never have to open the link yourself.',
       },
       {
         q: 'How do I check a link without clicking it?',
-        a: 'On a phone, press and hold the link and choose Copy link. On a computer, right-click it and choose Copy link address. Then paste it into url.vet. The link is never opened on your device.',
+        a: 'On a phone, press and hold the link and choose Copy link. On a computer, right-click it and choose Copy link address. Then paste it into aizen.detector. The link is never opened on your device.',
       },
       {
         q: 'Can I check a link from WhatsApp, SMS, email or a QR code?',
-        a: 'Yes. Copy the link and paste it here, or paste the whole message and url.vet will find the links in it. For a QR code, scan it with your camera and copy the link instead of opening it.',
+        a: 'Yes. Copy the link and paste it here, or paste the whole message and aizen.detector will find the links in it. For a QR code, scan it with your camera and copy the link instead of opening it.',
       },
       {
         q: 'Is it safe to check a dangerous link here?',
@@ -34,8 +34,8 @@ export const FAQ_GROUPS: { title: string; items: Faq[] }[] = [
         a: 'It sees a visit from our server, not from you. Your IP address is never sent to it.',
       },
       {
-        q: 'Can I use url.vet on my phone?',
-        a: "Yes. It works in any phone browser, with nothing to install. If you like, add it to your home screen from your browser's menu. On Android you can then share a link from another app straight to url.vet.",
+        q: 'Can I use aizen.detector on my phone?',
+        a: "Yes. It works in any phone browser, with nothing to install. If you like, add it to your home screen from your browser's menu. On Android you can then share a link from another app straight to aizen.detector.",
       },
     ],
   },
@@ -56,11 +56,11 @@ export const FAQ_GROUPS: { title: string; items: Faq[] }[] = [
       },
       {
         q: 'Does Safe mean the site is honest?',
-        a: 'It means no warning signs turned up. A real shop can still sell bad products, and a brand-new scam may not show any signs yet. Use url.vet as one layer of defense, not the only one.',
+        a: 'It means no warning signs turned up. A real shop can still sell bad products, and a brand-new scam may not show any signs yet. Use aizen.detector as one layer of defense, not the only one.',
       },
       {
-        q: 'How accurate is url.vet? Can it be wrong?',
-        a: 'It can. url.vet runs a fixed set of checks and shows every reason, so you can judge the result yourself. A new, little-known site can look suspicious, and a scam that went live minutes ago may show no signs yet. If a result looks wrong, use the Report button.',
+        q: 'How accurate is aizen.detector? Can it be wrong?',
+        a: 'It can. aizen.detector runs a fixed set of checks and shows every reason, so you can judge the result yourself. A new, little-known site can look suspicious, and a scam that went live minutes ago may show no signs yet. If a result looks wrong, use the Report button.',
       },
     ],
   },
@@ -73,15 +73,15 @@ export const FAQ_GROUPS: { title: string; items: Faq[] }[] = [
       },
       {
         q: 'How can I tell if a link is a phishing scam?',
-        a: "Common signs: the address misspells a real brand (paypa1.com), swaps in lookalike letters from another alphabet, was registered only days ago, uses an unusual ending like .top or .zip, or the page asks for a password or card details on a site the brand doesn't own. url.vet checks for all of these and lists any it finds.",
+        a: "Common signs: the address misspells a real brand (paypa1.com), swaps in lookalike letters from another alphabet, was registered only days ago, uses an unusual ending like .top or .zip, or the page asks for a password or card details on a site the brand doesn't own. aizen.detector checks for all of these and lists any it finds.",
       },
       {
         q: 'What is typosquatting?',
-        a: "Typosquatting is registering an address that is one slip away from a real one, like paypa1.com or amaz0n.com, hoping you won't notice. Some fakes go further and swap in letters from other alphabets that look identical. url.vet compares every address against well-known sites to catch both.",
+        a: "Typosquatting is registering an address that is one slip away from a real one, like paypa1.com or amaz0n.com, hoping you won't notice. Some fakes go further and swap in letters from other alphabets that look identical. aizen.detector compares every address against well-known sites to catch both.",
       },
       {
         q: 'Are shortened links like bit.ly or tinyurl safe?',
-        a: "A shortener isn't dangerous by itself, but it hides where the link really goes, which is why scammers like them. Paste the short link into url.vet: it follows it, through any further short links, and checks the page you would actually land on. If it can't find where a short link leads, it says so and won't call it Safe.",
+        a: "A shortener isn't dangerous by itself, but it hides where the link really goes, which is why scammers like them. Paste the short link into aizen.detector: it follows it, through any further short links, and checks the page you would actually land on. If it can't find where a short link leads, it says so and won't call it Safe.",
       },
       {
         q: 'Does the padlock or https mean a website is safe?',
@@ -99,7 +99,7 @@ export const FAQ_GROUPS: { title: string; items: Faq[] }[] = [
         q: 'What are some simple tips to stay safe from scam links?',
         a: 'A few habits stop most scams:',
         points: [
-          "Check before you click. If you weren't expecting a link, paste it into url.vet first.",
+          "Check before you click. If you weren't expecting a link, paste it into aizen.detector first.",
           'Read the address, not the page. Scam pages copy the look of real ones; the address gives them away.',
           'Be wary of urgency. "Your account will be blocked today" is how scammers stop you thinking.',
           "Never type a password, OTP or card number on a page you reached from a message. Open the app or type the site's address yourself.",
@@ -111,10 +111,10 @@ export const FAQ_GROUPS: { title: string; items: Faq[] }[] = [
     ],
   },
   {
-    title: 'About url.vet',
+    title: 'About Aizen Detector',
     items: [
       {
-        q: 'Is url.vet free? Do I need an account?',
+        q: 'Is Aizen Detector free? Do I need an account?',
         a: "It's free, with no account, no signup and no ads.",
       },
       {
@@ -122,16 +122,16 @@ export const FAQ_GROUPS: { title: string; items: Faq[] }[] = [
         a: "Results are cached for up to 24 hours so a repeat check loads instantly, then deleted. We don't log who checked what, and there are no accounts. The privacy page has the details.",
       },
       {
-        q: 'Is url.vet open source? Who runs it?',
-        a: 'Yes. All of the code, including the checks and the scoring, is public on GitHub under the AGPL-3.0 license, so anyone can read it or run their own copy. One developer builds and runs it. The About page has the story.',
+        q: 'Who built Aizen Detector?',
+        a: 'Aizen Detector was designed and built as a modern, explainable URL security detection engine for our project. The About page has details on how it works.',
       },
       {
-        q: 'Is url.vet an alternative to VirusTotal or URLScan?',
-        a: "For checking links, yes. url.vet is free and open source, and it explains its verdict in plain words instead of listing raw data. It checks web addresses and pages only; it doesn't scan files or use antivirus engines.",
+        q: 'Is Aizen Detector an alternative to VirusTotal or URLScan?',
+        a: "For checking links, yes. Aizen Detector explains its verdict in plain words instead of listing raw data. It checks web addresses and pages live in real time.",
       },
       {
         q: 'What is the paperclip in the corner?',
-        a: "That's Vetty, url.vet's helper, inspired by Clippy from old office software. Tap him and he will check a link for you, explain a result in simple words, or help you warn the person who sent it. He is not an AI chatbot, and he never collects your data, shows ads, or asks you to sign up. You can hide him from his menu. The About page has his story.",
+        a: "That's Friday, Aizen Detector's helper, inspired by Clippy from classic office software. Tap Friday and they will check a link for you, explain a result in simple words, or help you understand the risks.",
       },
     ],
   },

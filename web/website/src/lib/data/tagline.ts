@@ -1,7 +1,7 @@
 // Sketchy-looking links typed out in the home page tagline (each followed by "?").
 // Easter eggs recognise these too.
 // Keep each one to TAGLINE_MAX_LENGTH characters: on a phone, a longer link is shrunk to
-// fit beside "just url.vet it" and quickly gets too small to read.
+// fit beside "just aizen detect it" and quickly gets too small to read.
 export const TAGLINE_MAX_LENGTH = 21;
 
 export const TAGLINE_LINKS = [
