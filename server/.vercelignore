@@ -1,0 +1,9 @@
+aizen-detector.exe
+*.exe
+logs/
+tmp/
+.air.toml
+railway.toml
+render.yaml
+Procfile
+

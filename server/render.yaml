@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: aizen-detector-api
+    env: go
+    plan: free
+    region: oregon
+    buildCommand: go build -o aizen-detector ./cmd/aizen-detector
+    startCommand: ./aizen-detector
+    healthCheckPath: /health
+    envVars:
+      - key: ENV
+        value: PROD
+      - key: PORT
+        value: 8080
+      - key: LOG_TIMEZONE
+        value: UTC
+      - key: LOG_DIR
+        value: /tmp/logs
+      - key: REPORTS_FILE
+        value: /tmp/reports.jsonl
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://aizen-detector.vercel.app
+      - key: ADMIN_PASSWORD_HASH
+        generateValue: false
+      - key: ADMIN_JWT_SECRET
+        generateValue: true
+      - key: FEEDS_DIR
+        value: data/feeds
+      - key: FEED_PHISHTANK
+        value: "0"
+      - key: FEED_OPENPHISH
+        value: "0"
+      - key: THREAT_LOOKUPS
+        value: "0"
+      - key: CACHE_ADDR
+        value: ""
+

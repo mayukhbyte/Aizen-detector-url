@@ -1,0 +1,13 @@
+# aizen.detector prettier ignore
+# Ignore backend Go code
+/server/
+
+# Node modules, build, and dist
+node_modules/
+build/
+dist/
+.svelte-kit/
+
+# Logs and env
+*.log
+.env*
