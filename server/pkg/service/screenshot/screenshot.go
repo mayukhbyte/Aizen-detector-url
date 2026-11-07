@@ -4,6 +4,8 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"io"
+	"net/http"
 	"net/url"
 	"os"
 	"path/filepath"
@@ -313,13 +315,51 @@ func (s *Service) TakeScreenshot(rawURL string) ([]byte, error) {
 	return buf, nil
 }
 
+// fetchRemoteScreenshot uses thum.io screenshot service as a high-reliability fallback
+func fetchRemoteScreenshot(targetURL string) ([]byte, error) {
+	apiURL := "https://image.thum.io/get/width/1024/crop/768/" + targetURL
+	client := &http.Client{
+		Timeout: 12 * time.Second,
+	}
+	req, err := http.NewRequest("GET", apiURL, nil)
+	if err != nil {
+		return nil, err
+	}
+	req.Header.Set("User-Agent", "aizen-detector/1.0")
+
+	resp, err := client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+		return nil, fmt.Errorf("screenshot service returned status %d", resp.StatusCode)
+	}
+
+	data, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+	if len(data) < 100 {
+		return nil, errors.New("screenshot response too small")
+	}
+	return data, nil
+}
+
 // TakeScreenshot is a convenience function that uses the default service
 func TakeScreenshot(rawURL string) ([]byte, error) {
 	service, err := GetService()
-	if err != nil {
-		return nil, fmt.Errorf("failed to get screenshot service: %w", err)
+	if err == nil && service != nil {
+		bytes, err := service.TakeScreenshot(rawURL)
+		if err == nil && len(bytes) > 0 {
+			return bytes, nil
+		}
+		logger.Warn("local screenshot failed, falling back to cloud renderer", "err", err)
 	}
-	return service.TakeScreenshot(rawURL)
+
+	// Cloud fallback when running in serverless / without headless Chrome
+	return fetchRemoteScreenshot(rawURL)
 }
 
 // TakeScreenshotAndSave takes a screenshot, saves it to disk, and returns the file path
