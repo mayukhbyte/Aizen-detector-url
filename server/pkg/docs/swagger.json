@@ -5,7 +5,7 @@
         "title": "aizen.detector api",
         "contact": {},
         "license": {
-            "name": "AGPL-3.0"
+            "name": "MIT"
         },
         "version": "1.0"
     },

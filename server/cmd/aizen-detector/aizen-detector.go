@@ -3,7 +3,7 @@
 //	@title			aizen.detector api
 //	@version		1.0
 //	@description	URL safety analysis API. Checks phishing signals, redirects, TLS, DNS, brand mismatches, and more.
-//	@license.name	AGPL-3.0
+//	@license.name	MIT
 //
 //	@BasePath	/api/v1
 //

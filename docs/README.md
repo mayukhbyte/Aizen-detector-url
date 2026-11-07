@@ -7,7 +7,6 @@
 | [deployment.md](deployment.md) | Production deployment — VPS, reverse proxy, firewall |
 | [api.md](api.md) | Endpoint reference, Swagger UI, rate limits, example response |
 | [architecture.md](architecture.md) | System design, services, request lifecycle, detection engine |
-| [security.md](security.md) | Admin auth setup, password hashing, SSRF protection |
 | [testing.md](testing.md) | How to run tests, what's covered, adding new tests |
 | [performance.md](performance.md) | Latency characteristics, resource usage, tuning |
 | [design-decisions.md](design-decisions.md) | Key architectural choices and their rationale |
