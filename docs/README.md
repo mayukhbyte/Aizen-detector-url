@@ -107,6 +107,12 @@ For standalone or self-hosted deployments:
 
 ---
 
+## 👥 Contributors
+
+- **Mayukh** ([@mayukhbyte](https://github.com/mayukhbyte)) — Lead Architect & Maintainer
+
+---
+
 ## 👤 Author & Maintainer
 
 **Mayukh** ([@mayukhbyte](https://github.com/mayukhbyte))  

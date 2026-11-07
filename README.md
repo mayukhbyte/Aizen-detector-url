@@ -151,6 +151,12 @@ aizen-detector/
 
 ---
 
+## 👥 Contributors
+
+- **Mayukh** ([@mayukhbyte](https://github.com/mayukhbyte)) — Creator, Core Developer & Maintainer
+
+---
+
 ## 👤 Author
 
 **Mayukh** ([@mayukhbyte](https://github.com/mayukhbyte))  
