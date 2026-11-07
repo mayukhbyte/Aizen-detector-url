@@ -69,4 +69,6 @@ CLAUDE.md
 # -----------------
 instance/
 *.db
+.manus/
+
 

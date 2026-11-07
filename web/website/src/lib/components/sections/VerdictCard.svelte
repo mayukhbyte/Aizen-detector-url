@@ -88,14 +88,19 @@
 </script>
 
 <div
-  class={`flex flex-row items-center gap-4 p-5 sm:gap-6 sm:p-7 rounded-2xl border ${style.border} ${style.bg} ${style.pulse}`}
+  class={`flex flex-row items-center gap-4 p-5 sm:gap-6 sm:p-7 rounded-2xl border shadow-sm ring-1 ring-black/[0.025] dark:ring-white/[0.035] ${style.border} ${style.bg} ${style.pulse}`}
 >
   <!-- Verdict -->
   <div class="flex-1 flex flex-col gap-1.5 min-w-0">
     <span
-      class="text-[10px] sm:text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest"
-      >Verdict</span
+      class="inline-flex items-center gap-2 text-[10px] sm:text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest"
     >
+      <svg class={`h-4 w-4 ${style.scoreText}`} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 3.5 19 6v5.1c0 4.2-2.8 7.4-7 9.4-4.2-2-7-5.2-7-9.4V6l7-2.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+        <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span>Verdict</span>
+    </span>
     <!-- The verdict lands like a stamp: Risky hits hard, Suspicious wobbles, Safe settles. -->
     <div class="stamp stamp-{(verdict ?? '').toLowerCase()} flex items-center gap-3 flex-wrap">
       <span

@@ -92,20 +92,33 @@
 
 <header
   bind:clientWidth={headerWidth}
-  class="relative w-full flex flex-col items-center text-center {isLanding ? 'mb-12' : 'mb-8'}"
+  class="relative z-10 w-full flex flex-col items-center text-center {isLanding ? 'mb-10 sm:mb-12' : 'mb-8'}"
 >
+  {#if isLanding}
+    <div
+      class="mb-5 inline-flex items-center gap-2 rounded-full border border-accent-light/15 bg-white/65 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-gray-600 shadow-sm shadow-blue-900/[0.03] backdrop-blur dark:border-accent-dark/20 dark:bg-gray-900/55 dark:text-gray-300"
+    >
+      <span class="relative grid h-5 w-5 place-items-center rounded-full bg-accent-light/10 text-accent-light dark:bg-accent-dark/10 dark:text-accent-dark">
+        <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3.5 19 6v5.1c0 4.2-2.8 7.4-7 9.4-4.2-2-7-5.2-7-9.4V6l7-2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+          <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <span>Link intelligence, made clear</span>
+    </div>
+  {/if}
   <h1
     class="font-serif font-normal tracking-[-0.02em] leading-none {isLanding
-      ? 'text-7xl md:text-8xl'
+      ? 'text-[2.3rem] min-[400px]:text-[2.65rem] sm:text-7xl md:text-8xl'
       : 'text-4xl md:text-[2.75rem]'}"
     class:intro
   >
-    <a href="/" on:click={() => (location.href = "/")} class="group inline-flex items-center justify-center gap-3 sm:gap-4 md:gap-5">
+    <a href="/" on:click={() => (location.href = "/")} class="group inline-flex items-center justify-center gap-2 sm:gap-4 md:gap-5">
       <img
         src="/aizen-detector-normal.png"
         alt="Aizen Detector Logo"
         class="inline-block object-contain rounded-2xl shadow-lg border border-cyan-500/20 {isLanding
-          ? 'w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24'
+          ? 'w-10 h-10 min-[400px]:w-12 min-[400px]:h-12 sm:w-20 sm:h-20 md:w-24 md:h-24'
           : 'w-9 h-9 sm:w-11 sm:h-11'}"
       />
       <span class="inline-block">

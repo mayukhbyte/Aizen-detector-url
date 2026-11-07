@@ -43,10 +43,16 @@
   });
 </script>
 
+<div class="mt-8 mb-2 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[10px]">
+  <span class="font-semibold uppercase tracking-[0.18em] text-gray-700 dark:text-gray-300">Sample scans</span>
+  <span class="hidden min-[420px]:inline text-gray-400 dark:text-gray-500">·</span>
+  <span class="text-gray-500 dark:text-gray-400">Choose one to preview a report</span>
+</div>
+
 <div
   bind:this={row}
   data-guide="examples"
-  class="mt-5 flex flex-wrap justify-center items-center gap-2"
+  class="flex flex-wrap justify-center items-center gap-2"
 >
   {#if level < 2}
     <span class="text-xs text-gray-500 mr-1">Try</span>
@@ -61,7 +67,7 @@
         : "A lookalike, spelled with letters from another alphabet"}
       class="inline-flex items-center py-1.5 {level < 2
         ? 'gap-2 px-3.5'
-        : 'gap-1.5 px-2.5'} rounded-full border border-gray-300 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 text-gray-700 dark:text-gray-300 text-xs transition-colors"
+        : 'gap-1.5 px-2.5'} rounded-full border border-gray-300/80 bg-white/55 text-gray-700 shadow-sm shadow-gray-900/[0.02] transition-all hover:-translate-y-0.5 hover:border-accent-light/40 hover:bg-white hover:shadow-md dark:border-gray-800 dark:bg-gray-900/55 dark:text-gray-300 dark:hover:border-accent-dark/35 dark:hover:bg-gray-900"
     >
       <span
         class="w-1.5 h-1.5 rounded-full {example.hint === 'Legit'
@@ -78,15 +84,17 @@
   {/each}
 </div>
 
-<div
-  class="mt-10 pt-6 w-full max-w-2xl border-t border-gray-200 dark:border-gray-800 flex justify-center"
->
-  <!-- Short sentences on a centred line; each stays whole when the line wraps. -->
-  <p
-    class="max-w-xl text-center text-sm leading-relaxed text-gray-600 dark:text-gray-400 [text-wrap:balance]"
-  >
-    {#each POINTS as point}
-      <span class="whitespace-nowrap">{point}.</span>{" "}
-    {/each}
-  </p>
+<div class="mt-10 grid w-full max-w-3xl grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-3">
+  {#each POINTS as point}
+    <div
+      class="flex items-center justify-center gap-2 rounded-full border border-gray-200/80 bg-white/60 px-3 py-2.5 text-xs text-gray-700 shadow-sm shadow-gray-900/[0.02] dark:border-gray-800 dark:bg-gray-900/55 dark:text-gray-300"
+    >
+      <span class="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent-light/10 text-accent-light dark:bg-accent-dark/10 dark:text-accent-dark">
+        <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <span>{point}</span>
+    </div>
+  {/each}
 </div>

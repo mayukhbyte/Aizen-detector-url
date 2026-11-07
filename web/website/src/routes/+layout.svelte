@@ -48,12 +48,12 @@
 </svelte:head>
 
 <div class="relative min-h-screen flex flex-col">
-  <nav class="relative z-20 w-full max-w-5xl mx-auto px-6 pt-6 flex items-center justify-between">
-    <!-- Home link: the wordmark. Hidden on the home page, which shows the big one. -->
+  <nav class="relative z-20 w-full max-w-6xl mx-auto px-5 sm:px-6 py-5 sm:py-6 flex items-center justify-between gap-4">
+    <!-- Compact brand anchor; the larger hero wordmark reinforces the product name. -->
     <a
       href="/"
       on:click={() => (location.href = "/")}
-      class:invisible={isHome}
+      aria-current={isHome ? "page" : undefined}
       aria-label="Aizen Detector home"
       class="group inline-flex items-center gap-2.5 font-serif text-[1.65rem] leading-none tracking-[-0.02em]"
     >
@@ -71,6 +71,23 @@
         >
       </span>
     </a>
+    <div
+      class="hidden sm:flex items-center gap-1 rounded-full border border-gray-200/80 bg-white/50 p-1 text-sm shadow-sm shadow-gray-900/[0.02] dark:border-gray-800 dark:bg-gray-900/50"
+      role="group"
+      aria-label="Main navigation"
+    >
+      {#each FOOTER_LINKS.slice(0, 2) as link}
+        <a
+          href={link.href}
+          aria-current={$page.url.pathname === link.href ? "page" : undefined}
+          class="rounded-full px-3.5 py-2 transition-colors {$page.url.pathname === link.href
+            ? 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100'
+            : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100'}"
+        >
+          {link.label}
+        </a>
+      {/each}
+    </div>
     <div class="flex items-center gap-2">
       <ThemeToggle />
     </div>
